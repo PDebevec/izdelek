@@ -172,22 +172,18 @@ public:
 		return *this;
 	}
 	Matrika<T>& operator*=(Matrika<T> druga) {
-		//Matrika<T> temp = (*this) * druga;
 		(*this) = (*this) * druga;
 		return *this;
 	}
 	Matrika<T>& operator*=(T t) {
-		//Matrika<T> temp = (*this) * druga;
 		(*this) = (*this) * t;
 		return *this;
 	}
 	Matrika<T>& operator/=(Matrika<T> druga) {
-		//Matrika<T> temp = (*this) / druga;
 		(*this) = (*this) / druga;
 		return *this;
 	}
 	Matrika<T>& operator/=(T t) {
-		//Matrika<T> temp = (*this) / druga;
 		(*this) = (*this) / t;
 		return *this;
 	}
