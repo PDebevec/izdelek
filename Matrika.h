@@ -239,20 +239,6 @@ public:
 	}
 	~Matrika() {}
 private:
-	/*Matrika<T> operator^(T t) {
-		return lambda([t](size_t i, size_t j) {
-			return data[i][j] * t;
-			});
-	}
-	auto lambda(auto (funkcija)(size_t, size_t)) {
-		auto temp;
-		for (size_t = 0; i < V; i++) {
-			for (size_t j = 0; j < S; j++) {
-				temp[i][j] = funkcija(i, j);
-			}
-		}
-		return temp;
-	}*/
 private:
 	vector<vector<T>> data;
 	size_t S, V;
