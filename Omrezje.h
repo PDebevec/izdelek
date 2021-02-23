@@ -32,7 +32,7 @@ public:
 		}
 	}
 
-	void racNazaj(vector<float> res) {
+	void racNazaj(vector<float> res) { //ta funkcija ne dala kar bi mogla
 		for (size_t i = 0; i < res.size(); i++) {
 			//e.back()(0, i) = pow(res[i] - v.back()(0, i), 2);
 			e.back()(0, i) = pow(res[i] - v.back()(0, i),2);
