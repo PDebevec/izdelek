@@ -28,7 +28,7 @@ public:
 		normaliziran = (izracun >= 0.f);
 	}
 
-	//izracun napake in spreminjanje nakljucnih st.
+	//izracun napake in prilagajanje nakljucnih st.
 	void racNazaj(float res) {
 		float napaka = res - normaliziran;
 		float g = napaka * hu;
