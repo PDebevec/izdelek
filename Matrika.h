@@ -229,7 +229,7 @@ public:
 			}
 		}
 	}
-	/*Matrika<T> funkcijam(T(fun)(T)) {
+	Matrika<T> funkcijam(T(fun)(T)) {
 		Matrika<T> temp(V, S);
 		for (size_t i = 0; i < V; i++) {
 			for (size_t j = 0; j < S; j++) {
@@ -237,7 +237,7 @@ public:
 			}
 		}
 		return temp;
-	}*/
+	}
 	~Matrika() {}
 private:
 private:
