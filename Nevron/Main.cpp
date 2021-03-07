@@ -3,52 +3,101 @@
 int main() {
 	srand((unsigned int)time(NULL));
 
-	Nevron n(2);
-	for (int i = 0; i < 500; i++) {
-		switch (rand() % 4)
-		{
-		case 0:
-			n.treniraj({ 1.f,1.f }, 1.f);
-			break;
-		case 1:
-			n.treniraj({ 1.f,0.f }, 0.f);
-			break;
-		case 2:
-			n.treniraj({ 0.f,1.f }, 0.f);
-			break;
-		case 3:
-			n.treniraj({ 0.f,0.f }, 0.f);
-			break;
-		}
-	}
+	//deklaracija razredov
+	Nevron IN(2);
+	Nevron ALI(2);
+	//xor uporabi izracune iz nevrona IN in ALI
+	Nevron XOR(2);
+
+	//zacetek progarama
+	cout << "Izracun brez treniranja.\n\n";
+	//v funkcijo vnesemo tabelo tabel s podatki
 	cout << "IN\n";
-	n.izpis({ 1.f,1.f });
-	n.izpis({ 1.f,0.f });
-	n.izpis({ 0.f,1.f });
-	n.izpis({ 0.f,0.f });
-	cout << endl;
-	//-------------------------------------------------
-	Nevron b(2);
-	for (int i = 0; i < 500; i++) {
-		switch (rand() % 4)
-		{
-		case 0:
-			b.treniraj({ 1.f,1.f }, 1.f);
-			break;
-		case 1:
-			b.treniraj({ 1.f,0.f }, 1.f);
-			break;
-		case 2:
-			b.treniraj({ 0.f,1.f }, 1.f);
-			break;
-		case 3:
-			b.treniraj({ 0.f,0.f }, 0.f);
-			break;
-		}
-	}
+	IN.izpis({
+		{1,1},
+		{1,0},
+		{0,1},
+		{0,0}
+		});
+
 	cout << "ALI\n";
-	b.izpis({ 1.f,1.f });
-	b.izpis({ 1.f,0.f });
-	b.izpis({ 0.f,1.f });
-	b.izpis({ 0.f,0.f });
+	ALI.izpis({
+		{1,1},
+		{1,0},
+		{0,1},
+		{0,0}
+		});
+
+	cout << "XOR\n";
+	XOR.izpis({
+		{1,1},
+		{0,1},
+		{0,1},
+		{0,0}
+		});
+
+	cin.get();
+
+	//treniranje
+	cout << "TRENIRANJE\n\n";
+	//v funkcijo vnesemo podatke, resitve in st ponovitev treniranja
+	IN.treniraj({
+		{1,1},
+		{1,0},
+		{0,1},
+		{0,0}},
+		{1,0,0,0},
+		600
+	);
+
+	ALI.treniraj({
+		{1,1},
+		{1,0},
+		{0,1},
+		{0,0}},
+		{ 1,1,1,0 },
+		600
+	);
+
+	XOR.treniraj({
+		{1,1},
+		{0,1},
+		{0,1},
+		{0,0}},
+		{ 0,1,1,0 },
+		600
+	);
+
+	cout << "Konec\n\n";
+
+	cin.get();
+
+	//izracun pravilnih resitev
+	cout << "Izracuni po treniranju.\n\n";
+	//v funkcijo vnesemo podatke za izpis
+	cout << "IN\n";
+	IN.izpis({
+		{1,1},
+		{1,0},
+		{0,1},
+		{0,0}
+		});
+
+	cout << "ALI\n";
+	ALI.izpis({
+		{1,1},
+		{1,0},
+		{0,1},
+		{0,0}
+		});
+
+	cout << "XOR\n";
+	XOR.izpis({
+		{1,1},
+		{0,1},
+		{0,1},
+		{0,0}
+		});
+
+	cin.get();
 }
