@@ -84,7 +84,7 @@ private:
 	//privatna deklaracija spremenljivk
 	const float hu = 0.03f;	//hitrost ucenja
 	int normaliziran = 0;	//normaliziran izracun
-	float b = 1.f;			//x*w + b (bias)
-	tab v;					//tabela z podatki
-	tab w;					//nalkjucna stevila
+	float b = 1.f;		//x*w + b (bias)
+	tab v;			//tabela z podatki
+	tab w;			//nalkjucna stevila
 };
