@@ -1,0 +1,106 @@
+/////
+Nevron.h
+/////
+poklic knjižnic
+
+razred Nevron
+  spreminjanje defineicije tipov spremenljivk
+  
+ public:
+  konstruktor
+    inicializacija velikosti tabele
+      za podatke
+      za naključna števila
+    
+    zanka skozi vse nakljucne številke
+      generiramo nakljucne številke med -0.99 do 0.99
+  /////
+
+  funkcija računanje naprej
+    kopija podatke
+    spremenljivka za izračun
+    
+    zanka skozi vse podatke
+      izracun = nakljucna številka * podatek
+    
+    izracun += b
+    normalizacija izracuna poda 0 ali 1
+  /////
+
+  funkcija računanje nazaj
+    izracun napake = rešitev - normaliziran
+    
+    zanka skozi vse podatke
+      nakljucna stevilka = podatek * napaka * hitrost ušenja
+    
+    b += napaka * hitrost ušenja
+  /////
+  
+  funkcija treniraj za več podatko
+    zanka skozi vse ponovitve
+      nakljucna pozicija iz podatkov
+      klic funkcije treniraj s nakljucnimi podatki
+  /////
+  
+  funkcija treniraj za en podatek
+    klic funkcije racNaprej
+    klic funkcije racNazaj
+  /////
+  
+  funkcija izpis za več podatkov
+    zanka skozi vse tabele podatkov
+      klic funkcije izpis za tabelo
+  /////
+  
+  funkcija izpis za tabelo podatkov
+    zanka skozi vse podatke
+      izpis podatka
+    
+    klic funkcije racNaprej s podatkom
+    izpis izracunanega podatka
+  /////
+  
+  funkcija izpis izracuna
+    izpis normaliziranega podatka
+  /////
+  
+  destruktor
+/////
+private:
+  definicija spremenljivke za:
+    hitrost učenja
+    normaliziran izracun
+    bias
+    tabelo podatkov
+    tabelo naključnih številk
+/////
+
+
+/////
+Main.cpp
+/////
+
+poklic datoteke
+
+main funkcija
+  funkcija za nakljucne številke
+  
+  definicija podatkov
+  
+  definicija nevronov IN, ALI, XOR
+  
+  izpis netreniranih izracunov nevronov
+  
+  treniranje nevronov s podatki
+  
+  izpis izracuna po treniranju
+/////
+
+
+
+
+
+
+
+
+
