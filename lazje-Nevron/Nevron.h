@@ -11,8 +11,8 @@ class Nevron {
 public:
 	//konstruktor
 	Nevron(size_t pod) {
-
-		v.resize(pod, 0);
+		//doloèi velikost tabel
+		podatki.resize(pod, 0);
 		w.resize(pod + 1);
 		//nakljucna stevila od -0.99 do 0.99
 		for (size_t i = 0; i < w.size(); i++) {
@@ -21,12 +21,12 @@ public:
 	}
 
 	//izracun
-	void racNaprej(tab pod) {
-		v = pod;
+	void racNaprej(tab &pod) {
+		podatki = pod;
 		//izracun ugiba
 		float izracun = 0;
-		for (size_t i = 0; i < v.size(); i++) {
-			izracun += w[i] * v[i];
+		for (size_t i = 0; i < podatki.size(); i++) {
+			izracun += w[i] * podatki[i];
 		}
 		izracun += b;
 
@@ -39,8 +39,8 @@ public:
 		//izracun napake
 		float napaka = res - normaliziran;
 		//popravljanje nakljucnih stevil
-		for (size_t i = 0; i < v.size(); i++) {
-			w[i] += v[i] * napaka * hu;
+		for (size_t i = 0; i < podatki.size(); i++) {
+			w[i] += podatki[i] * napaka * hu;
 		}
 		//popravljanje b-ja
 		b += napaka * hu;
@@ -84,7 +84,7 @@ private:
 	//privatna deklaracija spremenljivk
 	const float hu = 0.03f;	//hitrost ucenja
 	int normaliziran = 0;	//normaliziran izracun
-	float b = 1.f;		//x*w + b (bias)
-	tab v;			//tabela z podatki
-	tab w;			//nalkjucna stevila
+	float b = 1.f;			//x*w + b (bias)
+	tab podatki;			//tabela z podatki
+	tab w;					//nalkjucna stevila
 };
